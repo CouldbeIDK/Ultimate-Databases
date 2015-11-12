@@ -9,6 +9,7 @@ First you will need to make sure you are using Ruby 2.1.1 or above. next you wil
 $gem install prettyprint
 $gem install sqlite3
 $gem install json
+$gem install sequel
 ```
 Next, you will need to run the Entry script to populate the database.
 ```sh

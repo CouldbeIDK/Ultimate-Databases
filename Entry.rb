@@ -2,12 +2,12 @@
 require 'rubygems'
 require 'json'
 require 'sequel'
+require 'open-uri'
 
-
-championdata = File.read('ChampionData.json') #Stored the results from the RiotAPI in a file so that I wouldn't have to learn HTML as well.
-itemdata = File.read('ItemData.json')
-mapdata = File.read('MapData.json')
-summonerspells = File.read('SummonerSpells.json')
+championdata = open(https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
+itemdata = open(https://global.api.pvp.net/api/lol/static-data/na/v1.2/item?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
+mapdata = open(https://global.api.pvp.net/api/lol/static-data/na/v1.2/map?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
+summonerspells = open(https://global.api.pvp.net/api/lol/static-data/na/v1.2/summoner-spell?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
 
 champObj = JSON.parse(championdata)
 itemObj = JSON.parse(itemdata)
