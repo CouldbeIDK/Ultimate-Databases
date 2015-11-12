@@ -21,18 +21,16 @@
 
 ####Skeleton: 
 
- - Database of all the item names.
+ - Database of all the item names, champions, and summoner spells. Information will be retrieved from the League of Legends API.
 
 
- - Picks out and sorts random items into into a list of 6. Doesn’t care if there are duplicates.
+ - Picks out and sorts random items into into a list of 6. Doesn’t care if there are duplicates also picks a random champion. Outputs in text form to console.
+
 
 
 ####Basic:
 
- - Now sorts the items by attributes. The attributes are Health, Health Regen, Mana, Mana Regen, Attack Damage, Ability Power, Armor, Magic Resist, Attack Speed, Critical Strike Movement Speed, Life Steal, Spell Vamp, Cooldown Reduction.
-
-
- - No longer picks duplicates into the builds and each build will have one and only one boot item which is a specific case and boots will have a separate table from the rest of the items.
+ - No longer pick duplicate items into a build
 
 
  - Allows user to choose map because certain items are map specific.
@@ -41,13 +39,11 @@
 
 -Solid: 
 
- - Includes champions(characters) as a new table. This champion table will also include the champions associated race, role (Marksman, Assassin, Mage, Support, Tank, Fighter), and abilities specific to each champion. (Each champion has four abilities but only 3 can be chosen to be maxed.)
-
-
  - Includes the ability the champion is forced to max. (Q, W, E,) 
 
-
  - Includes summoner spells as a new table.
+
+ - Ability to filter through champions. (Based on roles)
 
 
 
@@ -55,14 +51,7 @@
 
  - Generates a title for your build depending on which items get chosen.  
 
-
- - Ability to filter through champions.
-
-
  - In a special case where the Summoner Spell: Smite is chosen, the first item will be replaced with a “Jungle” item and this item will be chosen according to the role of the champion. 
-
-
- - We will need to create a separate table just like with Boots for the Jungle items.
 
 
 ###Tools
