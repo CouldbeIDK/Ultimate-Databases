@@ -2,17 +2,19 @@
 require 'rubygems'
 require 'json'
 require 'sequel'
-require 'open-uri'
+require 'httparty'
 
-championdata = open(https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
-itemdata = open(https://global.api.pvp.net/api/lol/static-data/na/v1.2/item?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
-mapdata = open(https://global.api.pvp.net/api/lol/static-data/na/v1.2/map?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
-summonerspells = open(https://global.api.pvp.net/api/lol/static-data/na/v1.2/summoner-spell?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed)
+champions = HTTParty.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed")
+items = HTTParty.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/item?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed")
+maps = HTTParty.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/map?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed")
+summonerspells = HTTParty.get("https://global.api.pvp.net/api/lol/static-data/na/v1.2/summoner-spell?api_key=45bc22be-d60d-4e92-9701-d0dab2ef71ed")
 
-champObj = JSON.parse(championdata)
-itemObj = JSON.parse(itemdata)
-mapObj = JSON.parse(mapdata)
-spellObj = JSON.parse(summonerspells)
+
+
+champObj = JSON.parse(champions.body)
+itemObj = JSON.parse(items.body)
+mapObj = JSON.parse(maps.body)
+spellObj = JSON.parse(summonerspells.body)
 
 
 UDB = Sequel.sqlite('Ultimate_Database.db') #Connect to the database

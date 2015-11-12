@@ -15,6 +15,7 @@ $gem install prettyprint
 $gem install sqlite3
 $gem install json
 $gem install sequel
+$gem install httparty
 ```
 Next, you will need to run the Entry script to populate the database.
 ```sh
