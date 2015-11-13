@@ -23,25 +23,34 @@ The reason I want to remake this web app is because the current one is outdated 
 
 
 ####Basic:
+
  - No longer pick duplicate items into a build, each item will be unique, and there will be no conflicts with one item preventing the purchase of another. (For example, building one gold income item will prevent you from building another gold income item, as that would break League of Legend's rules)
  - The user will now be able to select maps other than the "Summoner's Rift", so the program will generate builds from the items available for that map, so they don't end up with a build that won't work for them.
  - Will indicate what "Keystone Mastery" the player is supposed to obtain, the other mastery points are for them to decide.
+
 ####Solid: 
+ 
  - Includes the ability the champion is forced to maximize first. (Q, W, E) 
  - Include 2 summoner spells with each build, also following the game rule of no duplicate spells in a single build.
  - Allow the user to filter through the champions based on their preferred role, (Bruiser, Caster, etc.) so the program will generate a build only including their specified type of champion.
+
 ####Awesome: 
+ 
  - Builds will now have titles that reflect the items and champion generated for the match.
  - In a special case where the Summoner Spell: Smite is chosen, the first item will be replaced with a “Jungle” item and this item will be chosen according to the role of the champion. 
-###Tools
+
+ ###Tools
+ 
  - Ruby
  - Ruby Gems
  - Sequel[2]
-###Possible Problems
+
+ ###Possible Problems
  - Special cases in which a champion starts off with an item because of the games design.
  - Some champions which are required to level a certain ability first because of the games design.
  - Due to these cases and more we will need to design our database to be flexible.
-###References
+
+ ###References
 
 
 [1] Ultimate-bravery.com, 'Ultimate Bravery | League of Legends', 2015. [Online]. Available: http://www.ultimate-bravery.com/. [Accessed: 30- Sep- 2015]
