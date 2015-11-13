@@ -1,5 +1,10 @@
 ## Ultimate Bravery
 
+####Disclaimer
+The Ultimate Database isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+
+This program was made possible through the Riot Games API, and uses it extensively.
+
 ###Overview
 Ultimate Bravery was a community-made custom game mode for the game League of Legends. It would randomly pick out a champion for a player, as well as a random assortment of items for the player to build. I am hoping to make the program as well, hopefully with a few improvements. 
 
