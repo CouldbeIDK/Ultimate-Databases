@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 require 'rubygems'
+require 'bundler/setup'
 require 'json'
 require 'sequel'
 require 'httparty'

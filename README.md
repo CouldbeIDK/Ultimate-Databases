@@ -9,13 +9,11 @@ This program was made possible through the Riot Games API, and uses it extensive
 Ultimate Bravery was a community-made custom game mode for the game League of Legends. It would randomly pick out a champion for a player, as well as a random assortment of items for the player to build. I am hoping to make the program as well, hopefully with a few improvements. 
 
 ###Setup
-First you will need to make sure you are using Ruby 2.1.1 or above. next you will need to install the required gems for these programs.
+First you will need to make sure you are using Ruby 2.1.1 or above. next you will need to install the required gems for these programs. We have included a gem called bundler that will install all other gems in one step from the gemfile included.
 ```sh
-$gem install prettyprint
-$gem install sqlite3
-$gem install json
-$gem install sequel
-$gem install httparty
+$gem install bundler
+$bundle install
+
 ```
 Next, you will need to run the Entry script to populate the database.
 ```sh
