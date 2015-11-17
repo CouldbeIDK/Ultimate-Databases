@@ -15,7 +15,7 @@ $gem install bundler
 $bundle install
 
 ```
-Next, you will need to run the Entry script to populate the database.
+Next you will need use a text editor to edit the value of "key" on line 9 of "Entry.rb" to your own personal key, you can acquire one by going to the RiotAPI page and setting up an account. Then, you will need to run the Entry script to populate the database.
 ```sh
 $ruby Entry.rb
 ```

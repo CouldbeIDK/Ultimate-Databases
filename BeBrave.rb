@@ -7,38 +7,42 @@ require 'pp'
 
 UDB = Sequel.sqlite('Ultimate_Database.db') #Connect to the database
 
-
 class Build
 	
 	def initialize
 		@champion = nil
 		@items = []
-	end #initialize
+		@goldgen = false
+	end
 	
-	def selectChampion #choose a random champion and set it as the @champion for this build
+	#choose a random champion and set it as the @champion for this build
+	def selectChampion 
 		championList = []
-		champs = UDB.fetch('SELECT * FROM champions') do |champ|
+		champs = UDB[:champions].each do |champ|
 			championList << champ[:name]
 		end
 		@champion = championList[rand(championList.length)]
-	end #selectChampion
+	end
 	
-	def selectItems #choose a set of 6 items and set it as the @items for this build
-		itemList = []
-		items = UDB.fetch('SELECT * FROM items WHERE name NOT LIKE "Enchantment%" AND name NOT LIKE "%Trinket%" AND name NOT LIKE "%Sightstone%"') do |item|
-			itemList << item[:name]
-		end
+	#choose a set of 6 items and set it as the @items for this build
+	def selectItems 
+    items_tags = UDB[:items].join(:tags, :id => :id)#.exclude(:tag => "Vision").or(:tag => "Boots").or(:tag => "Trinket").or(:tag => "BootsEnchantment").sql
+    itemList = items_tags.map(:name).uniq
 		for i in 0..5
-			@items << itemList[rand(itemList.length)]
+      index = rand(itemList.length)
+      item = itemList[index]
+      itemList.delete_at(index)
+      itemList
+			@items << item
 		end
-	end #selectItems
+	end
 	
 	def printBuild
 		pp "Champion: " + @champion
 		pp "Items: ", @items
-	end #printBuild
+	end
 	
-end #class Build
+end
 
 newBuild = Build.new
 newBuild.selectChampion
