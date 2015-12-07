@@ -22,5 +22,11 @@ $ruby Start.rb
 ```
 Run it as many times as you want from here, and it will continue to generate builds for you.
 
+###Tests
+To run the code tests, run:
+```sh
+$ruby Tests.rb
+```
+
 ####References
 [Ultimate Bravery Website](http://www.ultimate-bravery.com/)
